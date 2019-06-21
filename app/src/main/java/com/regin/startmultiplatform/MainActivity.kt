@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
         launch(Dispatchers.Main) {
             try {
                 val result = withContext(Dispatchers.IO) { weatherRepository.fetchWeather() }
-                //Toast.makeText(this@MainActivity, result.toString(), Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MainActivity, result.toString(), Toast.LENGTH_LONG).show()
             } catch (e: Exception) {
                 e.printStackTrace()
                 Toast.makeText(this@MainActivity, e.message, Toast.LENGTH_LONG).show()
